@@ -20,7 +20,7 @@ You can obtain your own API key from [http://www.omdbapi.com/apikey.aspx](http:/
 ## Technical Stack
 
 * **Frontend:** React.js
-* **State Management:** React Hooks (`useState`, `useEffect`)
+* **State Management:** React Hooks (`useState`, `useEffect`),Custom Hooks
 * **Styling:** Basic CSS (no external CSS framework used in this core prototype)
 * **API:** OMDB API
 
@@ -69,7 +69,7 @@ The application will open in your default browser at `http://localhost:3000`.
 
 2. **Search Functionality:**
 * Enter a movie title (e.g., "Inception", "The Matrix") into the search bar.
-* Press Enter or click the "Search" button.
+* By Use of custom Hook debouncing there is no need to CLICK SEARCH Button
 * Confirm that search results are displayed, showing movie titles and release years.
 * Test with movie titles that yield no results to see the "No movies found" message.
 * Clearing the search bar and searching should ideally bring back the popular movies list.
@@ -87,21 +87,26 @@ The application will open in your default browser at `http://localhost:3000`.
 * (If possible to simulate) Check if error messages are displayed for API issues or no results.
 
 ## Project Structure
-movie-search-app/
+```movie-search-app/
 ├── public/
-│ └── index.html
+│   └── index.html
 ├── src/
-│ ├── components/ # Reusable UI components
-│ │ ├── MovieCard.jsx
-│ │ ├── MovieList.jsx
-│ │ ├── MovieModal.jsx
-│ │ └── SearchBar.jsx
-│ ├── App.css # Main app styles
-│ ├── App.jsx # Main application component
-│ └── index.js # Entry point of the React app
+│   ├── components/            # Reusable UI components
+│   │   ├── MovieCard.jsx
+│   │   ├── MovieList.jsx
+│   │   ├── MovieModal.jsx
+│   │   └── SearchBar.jsx
+│   ├── hooks/                 # Custom React hooks
+│   │   └── useDebounce.jsx
+│   ├── App.css                # Main app styles
+│   ├── App.jsx                # Main application component
+│   └── index.js               # Entry point of the React app
 ├── .gitignore
 ├── package.json
 └── README.md
+```
+
+
 
 ## Screenshots 
 ![image](https://github.com/user-attachments/assets/05e0f230-6d24-40e3-a56c-873856d2863a)
